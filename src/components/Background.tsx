@@ -14,8 +14,11 @@ const Background: React.FC = () => {
         canvas.width = window.innerWidth
         canvas.height = window.innerHeight
 
+        const isMobile = window.innerWidth < 768
+        const particleCount = isMobile ? 40 : 100
         const particles: { x: number; y: number; r: number; dx: number; dy: number; alpha: number }[] = []
-        for (let j = 0; j < 100; j++) {
+
+        for (let j = 0; j < particleCount; j++) {
             particles.push({
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
@@ -27,13 +30,14 @@ const Background: React.FC = () => {
         }
 
         let animId: number
+        let lastThemeCheck = document.documentElement.classList.contains('light')
+
         const draw = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height)
-            const isLight = document.documentElement.classList.contains('light')
             particles.forEach(p => {
                 ctx.beginPath()
                 ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
-                ctx.fillStyle = isLight
+                ctx.fillStyle = lastThemeCheck
                     ? `rgba(99, 102, 241, ${p.alpha * 0.6})`
                     : `rgba(99, 102, 241, ${p.alpha})`
                 ctx.fill()

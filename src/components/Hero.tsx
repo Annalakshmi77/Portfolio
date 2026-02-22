@@ -42,7 +42,7 @@ const Hero: React.FC = () => {
     }, [])
 
     return (
-        <section className="min-h-screen relative flex items-center justify-center pt-20 overflow-hidden bg-transparent">
+        <section id="home" className="min-h-screen relative flex items-center justify-center pt-20 overflow-hidden bg-transparent">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-violet-800/5 rounded-full blur-[200px]" />
 
             {/* Floating AI / Tech Symbols */}
