@@ -96,8 +96,8 @@ const Projects: React.FC = () => {
                         >
                             <div
                                 className={`rounded-3xl p-8 border h-full flex flex-col items-start gap-6 transition-all duration-500 ${isLight
-                                        ? 'bg-white/85 border-slate-200/80 shadow-sm hover:shadow-xl hover:border-indigo-200 backdrop-blur-sm'
-                                        : 'glass-card border-white/5'
+                                    ? 'bg-white/85 border-slate-200/80 shadow-sm hover:shadow-xl hover:border-indigo-200 backdrop-blur-sm'
+                                    : 'glass-card border-white/5'
                                     }`}
                                 style={isLight ? {
                                     boxShadow: `0 4px 24px ${project.lightGlow}`,
@@ -122,8 +122,8 @@ const Projects: React.FC = () => {
                                         <span
                                             key={t}
                                             className={`text-[10px] font-bold px-3 py-1 rounded-full border ${isLight
-                                                    ? 'bg-indigo-50 text-indigo-600 border-indigo-100'
-                                                    : 'bg-white/5 text-slate-400 border-white/5'
+                                                ? 'bg-indigo-50 text-indigo-600 border-indigo-100'
+                                                : 'bg-white/5 text-slate-400 border-white/5'
                                                 }`}
                                         >
                                             {t}
@@ -157,10 +157,10 @@ const Projects: React.FC = () => {
                             animate={{ scale: 1, y: 0 }}
                             exit={{ scale: 0.9, y: 20 }}
                             className={`rounded-3xl p-8 md:p-12 max-w-3xl w-full relative shadow-2xl border ${isLight
-                                    ? 'bg-white border-slate-200 shadow-indigo-100'
-                                    : 'bg-[#0a0f1e] border-white/10'
+                                ? 'bg-white border-slate-200 shadow-indigo-100'
+                                : 'bg-[#0a0f1e] border-white/10'
                                 }`}
-                            onClick={e => e.stopPropagation()}
+                            onClick={(e: React.MouseEvent) => e.stopPropagation()}
                         >
                             <button
                                 onClick={() => setSelectedProject(null)}
@@ -190,8 +190,8 @@ const Projects: React.FC = () => {
                                     <span
                                         key={t}
                                         className={`px-4 py-2 rounded-full font-medium text-sm border ${isLight
-                                                ? 'bg-indigo-50 border-indigo-100 text-indigo-700'
-                                                : 'bg-white/5 border-white/5 text-slate-300'
+                                            ? 'bg-indigo-50 border-indigo-100 text-indigo-700'
+                                            : 'bg-white/5 border-white/5 text-slate-300'
                                             }`}
                                     >
                                         {t}
@@ -203,8 +203,8 @@ const Projects: React.FC = () => {
                                 <a
                                     href={selectedProject.github}
                                     className={`flex-1 min-w-[160px] flex items-center justify-center gap-2 px-6 py-4 rounded-2xl font-bold border transition-all ${isLight
-                                            ? 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200'
-                                            : 'bg-white/5 hover:bg-white/10 text-white border-white/5'
+                                        ? 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200'
+                                        : 'bg-white/5 hover:bg-white/10 text-white border-white/5'
                                         }`}
                                 >
                                     <Github size={20} />
